@@ -344,14 +344,14 @@ class LinkedInAPI(object):
         VALUE = E.value
 
         if not '@' in recipient:
-            recs = RECIPIENT(PERSON(path=id_rec_path+r))
+            recs = RECIPIENT(PERSON(path=id_rec_path+recipient))
             auth = CONTENT(REQUEST(CONNECT('friend'), AUTH(NAME(kwargs['name']), VALUE(kwargs['value']))))
         else:
             recs = RECIPIENT(
                         PERSON(
                             FIRST(kwargs['first_name']),
                             LAST(kwargs['last_name']),
-                            path=email_rec_path+r
+                            path=email_rec_path+recipient
                         )
                     )
             auth = CONTENT(REQUEST(CONNECT('friend')))
