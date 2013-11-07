@@ -357,7 +357,7 @@ class LinkedInAPI(object):
             auth = CONTENT(REQUEST(CONNECT('friend')))
         mxml = MAILBOX_ITEM(
             RECIPIENTS(
-                *recs
+                recs
             ),
             SUBJECT(subject),
             BODY(body),
